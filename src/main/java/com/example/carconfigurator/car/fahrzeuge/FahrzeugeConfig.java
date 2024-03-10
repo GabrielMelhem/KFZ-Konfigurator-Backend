@@ -6,19 +6,20 @@ import org.springframework.context.annotation.Configuration;
 
 import java.util.List;
 
+
 @Configuration
 public class FahrzeugeConfig {
     @Bean
     CommandLineRunner commandLineRunner(FahrzeugeRepository repository) {
         return args -> {
-            Fahrzeuge fahrzeuge1 = new Fahrzeuge(
+            Fahrzeuge car1 = new Fahrzeuge(
                     "Volkswagen",
                     "Der Polo",
                     21590
 
             );
 
-            Fahrzeuge fahrzeuge2 = new Fahrzeuge(
+            Fahrzeuge car2 = new Fahrzeuge(
                     "Mercedes",
                     "G Klass",
                     65000
@@ -26,7 +27,7 @@ public class FahrzeugeConfig {
             );
 
             repository.saveAll(
-                    List.of(fahrzeuge1,fahrzeuge2)
+                    List.of(car1,car2)
             );
         };
     }
