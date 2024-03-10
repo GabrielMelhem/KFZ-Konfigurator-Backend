@@ -1,4 +1,4 @@
-package com.example.carconfigurator.car;
+package com.example.carconfigurator.car.motorleistung;
 
 import jakarta.persistence.*;
 

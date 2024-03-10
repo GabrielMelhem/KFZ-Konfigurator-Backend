@@ -1,4 +1,4 @@
-package com.example.carconfigurator.car;
+package com.example.carconfigurator.car.motorleistung;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -24,8 +24,14 @@ public class MotorleistungConfig {
                     15000
             );
 
+            Motorleistung pro_m = new Motorleistung(
+                    "Pro M",
+                    "200KW",
+                    20000
+            );
+
             repository.saveAll(
-                    List.of(pro,pro_s)
+                    List.of(pro,pro_s,pro_m)
             );
         };
     }

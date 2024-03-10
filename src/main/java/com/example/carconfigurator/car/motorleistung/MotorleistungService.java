@@ -1,4 +1,4 @@
-package com.example.carconfigurator.car;
+package com.example.carconfigurator.car.motorleistung;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,5 @@ public class MotorleistungService {
         this.motorleistungRepository = motorleistungRepository;
     }
 
-    public List<Motorleistung> getMotorleistung() {
-        return motorleistungRepository.findAll();
-    }
+    public List<Motorleistung> getMotorleistung() {return motorleistungRepository.findAll();}
 }

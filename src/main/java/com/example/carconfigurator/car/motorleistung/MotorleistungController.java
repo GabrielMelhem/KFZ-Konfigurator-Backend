@@ -1,4 +1,4 @@
-package com.example.carconfigurator.car;
+package com.example.carconfigurator.car.motorleistung;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
