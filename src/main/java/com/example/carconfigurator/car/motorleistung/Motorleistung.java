@@ -46,7 +46,7 @@ public class Motorleistung {
 
     public void setMotor_name(String motor_name) {
         if (motor_name != null) {
-            this.motor_name = motor_name.trim(); //to remove leading or trailing spaces
+            this.motor_name = motor_name.trim();
         } else {
             throw new IllegalArgumentException("Motor_name darf nicht null sein");
         }
