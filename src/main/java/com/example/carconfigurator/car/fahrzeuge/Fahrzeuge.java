@@ -43,7 +43,11 @@ public class Fahrzeuge {
     }
 
     public void setMarke(String marke) {
-        this.marke = marke;
+        if (marke != null) {
+            this.marke = marke.trim();
+        } else {
+            throw new IllegalArgumentException("Marke darf nicht null sein");
+        }
     }
 
     public String getModell() {
@@ -51,7 +55,11 @@ public class Fahrzeuge {
     }
 
     public void setModell(String modell) {
-        this.modell = modell;
+        if (modell != null) {
+            this.modell = modell.trim();
+        } else {
+            throw new IllegalArgumentException("Modell darf nicht null sein");
+        }
     }
 
     public double getPreis() {
@@ -59,6 +67,10 @@ public class Fahrzeuge {
     }
 
     public void setPreis(double preis) {
-        this.preis = preis;
+        if (preis > 0) {
+            this.preis = preis;
+        } else {
+            throw new IllegalArgumentException("Der Preis muss größer als 0 sein");
+        }
     }
 }

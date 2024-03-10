@@ -14,19 +14,19 @@ public class MotorleistungConfig {
         return args -> {
             Motorleistung pro = new Motorleistung(
                     "Pro",
-                    "100KW",
+                    100,
                     10000
             );
 
             Motorleistung pro_s = new Motorleistung(
                     "Pro S",
-                    "150KW",
+                    150,
                     15000
             );
 
             Motorleistung pro_m = new Motorleistung(
                     "Pro M",
-                    "200KW",
+                    200,
                     20000
             );
 

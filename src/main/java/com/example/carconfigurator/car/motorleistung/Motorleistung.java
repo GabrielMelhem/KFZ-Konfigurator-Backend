@@ -18,14 +18,14 @@ public class Motorleistung {
     private Long id;
 
     private String motor_name;
-    private String leistung;
+    private int leistung;
     private double preis;
 
 
     public Motorleistung() {
     }
 
-    public Motorleistung(String motor_name, String leistung, double preis) {
+    public Motorleistung(String motor_name, int leistung, double preis) {
         this.motor_name= motor_name;
         this.leistung = leistung;
         this.preis = preis;
@@ -45,15 +45,23 @@ public class Motorleistung {
     }
 
     public void setMotor_name(String motor_name) {
-        this.motor_name = motor_name;
+        if (motor_name != null) {
+            this.motor_name = motor_name.trim(); //to remove leading or trailing spaces
+        } else {
+            throw new IllegalArgumentException("Motor_name darf nicht null sein");
+        }
     }
 
-    public String getLeistung() {
+    public int getLeistung() {
         return leistung;
     }
 
-    public void setLeistung(String leistung) {
-        this.leistung = leistung;
+    public void setLeistung(int leistung) {
+        if (leistung > 0) {
+            this.leistung = leistung;
+        } else {
+            throw new IllegalArgumentException("Die Leistung muss größer als 0 sein");
+        }
     }
 
     public double getPreis() {
@@ -61,6 +69,10 @@ public class Motorleistung {
     }
 
     public void setPreis(double preis) {
-        this.preis = preis;
+        if (preis > 0) {
+            this.preis = preis;
+        } else {
+            throw new IllegalArgumentException("Der Preis muss größer als 0 sein");
+        }
     }
 }
