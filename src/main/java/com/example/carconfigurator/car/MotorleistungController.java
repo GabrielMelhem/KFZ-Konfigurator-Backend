@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "api/v1/motorleistung")
+@RequestMapping(path = "api/v1/motorleistungen")
 public class MotorleistungController {
 
     private  final MotorleistungService motorleistungService;
