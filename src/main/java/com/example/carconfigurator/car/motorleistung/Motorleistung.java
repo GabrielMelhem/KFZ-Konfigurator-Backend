@@ -2,7 +2,6 @@ package com.example.carconfigurator.car.motorleistung;
 
 import jakarta.persistence.*;
 
-
 @Entity
 @Table
 public class Motorleistung {

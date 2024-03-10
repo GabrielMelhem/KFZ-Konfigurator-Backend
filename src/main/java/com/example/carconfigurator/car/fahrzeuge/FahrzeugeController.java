@@ -19,5 +19,6 @@ public class FahrzeugeController {
     }
 
     @GetMapping
-    public List<Fahrzeuge> getFahrzeuge(){return fahrzeugeService.getFahrzruge();}
+    public List<Fahrzeuge> getFahrzeuge(){return fahrzeugeService.getFahrzeuge();}
 }
+

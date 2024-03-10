@@ -15,7 +15,7 @@ public class FahrzeugeService {
         this.fahrzeugeRepository = fahrzeugeRepository;
     }
 
-    public List<Fahrzeuge> getFahrzruge() { return fahrzeugeRepository.findAll();}
+    public List<Fahrzeuge> getFahrzeuge() {return fahrzeugeRepository.findAll();}
 
-
+    
 }

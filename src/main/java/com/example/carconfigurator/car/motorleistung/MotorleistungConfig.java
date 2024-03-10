@@ -10,7 +10,7 @@ import java.util.List;
 public class MotorleistungConfig {
 
     @Bean
-    CommandLineRunner commandLineRunner(MotorleistungRepository repository) {
+    CommandLineRunner motorleistungCommandLineRunner(MotorleistungRepository repository) {
         return args -> {
             Motorleistung pro = new Motorleistung(
                     "Pro",
