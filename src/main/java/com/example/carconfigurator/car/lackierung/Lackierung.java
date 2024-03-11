@@ -15,7 +15,7 @@ public class Lackierung {
             strategy = GenerationType.SEQUENCE,
             generator = "lackierung_sequence"
     )
-    private Long id;
+    private Long lackierungID;
 
     private String farbe;
 
@@ -30,11 +30,11 @@ public class Lackierung {
     }
 
     public Long getId() {
-        return id;
+        return lackierungID;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long lackierungID) {
+        this.lackierungID = lackierungID;
     }
 
     public String getFarbe() {

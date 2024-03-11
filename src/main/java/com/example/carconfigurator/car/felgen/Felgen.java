@@ -16,7 +16,7 @@ public class Felgen {
             generator = "felgen_sequence"
     )
 
-    private Long id;
+    private Long felgenID;
 
     private String felgen_typ;
 
@@ -31,11 +31,11 @@ public class Felgen {
     }
 
     public Long getId() {
-        return id;
+        return felgenID;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long felgenID) {
+        this.felgenID = felgenID;
     }
 
     public String getFelgen_typ() {

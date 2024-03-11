@@ -22,4 +22,6 @@ public class MotorleistungController {
     public List <Motorleistung> getMotorleistung(){
         return motorleistungService.getMotorleistung();
     }
+
+
 }

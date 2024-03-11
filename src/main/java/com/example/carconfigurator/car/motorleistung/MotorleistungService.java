@@ -16,4 +16,6 @@ public class MotorleistungService {
     }
 
     public List<Motorleistung> getMotorleistung() {return motorleistungRepository.findAll();}
+
+
 }

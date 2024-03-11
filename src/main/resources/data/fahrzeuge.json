@@ -1,0 +1,23 @@
+[
+  {
+    "marke": "Volkswagen",
+    "modell": "Der Polo",
+    "preis": 21590
+  },
+  {
+    "marke": "Volkswagen",
+    "modell": "Der Taigo",
+    "preis": 22000
+  },
+  {
+    "marke": "Mercedes",
+    "modell": "G Klass",
+    "preis":65000
+    },
+    {
+      "marke": "Mercedes",
+      "modell": "GLA 250 e",
+      "preis": 57000
+    }
+]
+

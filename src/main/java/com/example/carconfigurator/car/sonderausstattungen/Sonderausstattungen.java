@@ -16,7 +16,7 @@ public class Sonderausstattungen {
             generator = "sonderausstattungen_sequence"
     )
 
-    private Long id;
+    private Long sonderausstattungenID;
 
     private String sonderausstattung_name;
 
@@ -31,11 +31,11 @@ public class Sonderausstattungen {
     }
 
     public Long getId() {
-        return id;
+        return sonderausstattungenID;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long sonderausstattungenID) {
+        this.sonderausstattungenID = sonderausstattungenID;
     }
 
     public String getSonderausstattung_name() {

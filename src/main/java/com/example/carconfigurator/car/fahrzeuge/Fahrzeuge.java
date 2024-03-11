@@ -1,6 +1,10 @@
 package com.example.carconfigurator.car.fahrzeuge;
 
+import com.example.carconfigurator.car.felgen.Felgen;
+import com.example.carconfigurator.car.lackierung.Lackierung;
+import com.example.carconfigurator.car.motorleistung.Motorleistung;
 import jakarta.persistence.*;
+import org.hibernate.mapping.Set;
 
 @Entity
 @Table
@@ -15,11 +19,15 @@ public class Fahrzeuge {
             strategy = GenerationType.SEQUENCE,
             generator = "fahrzeuge_sequence"
     )
-    private Long id;
+    private Long fahrzeugeID;
 
     private String marke;
     private String modell;
     private double preis;
+
+
+
+
 
     public Fahrzeuge() {
     }
@@ -30,12 +38,13 @@ public class Fahrzeuge {
         this.preis = preis;
     }
 
+
     public Long getId() {
-        return id;
+        return fahrzeugeID;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long fahrzeugeID) {
+        this.fahrzeugeID = fahrzeugeID;
     }
 
     public String getMarke() {
@@ -73,4 +82,6 @@ public class Fahrzeuge {
             throw new IllegalArgumentException("Der Preis muss größer als 0 sein");
         }
     }
+
+
 }
