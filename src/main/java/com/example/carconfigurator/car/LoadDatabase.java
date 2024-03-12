@@ -65,22 +65,23 @@ public class LoadDatabase {
             });
             sonderausstattungenRepository.saveAll(sonderausstattungenListe);
 
-            List<Fahrzeuge> fahrzeugeListe = mapper.readValue(fahrzeugeData.getInputStream(), new TypeReference<List<Fahrzeuge>>() {
-            });
-            fahrzeugeRepository.saveAll(fahrzeugeListe);
 
-
-            /*
             Resource resource = new ClassPathResource("data/fahrzeuge.json");
             List<Map<String, String>> fahrzeuge = mapper.readValue(resource.getInputStream(), new TypeReference<List<Map<String, String>>>() {
             });
             fahrzeuge.forEach(fahrzeugMap -> {
-                Motorleistung motorleistung = motorleistungRepository.findByMotorID(fahrzeugMap.get("motorleistungID")).orElseThrow();
+                Motorleistung motorleistung = motorleistungRepository.findById(Long.valueOf(fahrzeugMap.get("motorleistung_id"))).orElseThrow();
+                Felgen felgen = felgenRepository.findById(Long.valueOf(fahrzeugMap.get("felgen_id"))).orElseThrow();
+                Lackierung lackierung = lackierungRepository.findById(Long.valueOf(fahrzeugMap.get("lackierung_id"))).orElseThrow();
                 Fahrzeuge fahrzeug = new Fahrzeuge();
+                fahrzeug.setMarke(fahrzeugMap.get("marke"));
                 fahrzeug.setModell(fahrzeugMap.get("modell"));
+                fahrzeug.setPreis(Double.parseDouble(fahrzeugMap.get("preis")));
                 fahrzeug.setMotorleistung(motorleistung);
+                fahrzeug.setFelgen(felgen);
+                fahrzeug.setLackierung(lackierung);
                 fahrzeugeRepository.save(fahrzeug);
-            });*/
+            });
 
 
             System.out.println("Daten wurden aus externen Dateien initialisiert");

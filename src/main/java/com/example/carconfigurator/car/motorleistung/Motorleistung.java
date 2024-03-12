@@ -4,7 +4,7 @@ package com.example.carconfigurator.car.motorleistung;
 import jakarta.persistence.*;
 
 @Entity
-@Table
+@Table(name = "motorleistungen")
 public class Motorleistung {
     @Id
     @SequenceGenerator(
@@ -16,7 +16,11 @@ public class Motorleistung {
             strategy = GenerationType.SEQUENCE,
             generator = "motorleistung_sequence"
     )
-    private Long motorleistungID;
+    @Column(
+            name="motorleistung_id",
+            updatable=false
+    )
+    private Long id;
 
     private String motor_name;
     private int leistung;
@@ -36,11 +40,11 @@ public class Motorleistung {
 
 
     public Long getId() {
-        return motorleistungID;
+        return id;
     }
 
-    public void setId(Long motorleistungID) {
-        this.motorleistungID = motorleistungID;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getMotor_name() {

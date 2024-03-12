@@ -4,10 +4,10 @@ import com.example.carconfigurator.car.felgen.Felgen;
 import com.example.carconfigurator.car.lackierung.Lackierung;
 import com.example.carconfigurator.car.motorleistung.Motorleistung;
 import jakarta.persistence.*;
-import org.hibernate.mapping.Set;
+
 
 @Entity
-@Table
+@Table(name="fahrzeuge")
 public class Fahrzeuge {
     @Id
     @SequenceGenerator(
@@ -19,32 +19,71 @@ public class Fahrzeuge {
             strategy = GenerationType.SEQUENCE,
             generator = "fahrzeuge_sequence"
     )
-    private Long fahrzeugeID;
+    @Column(
+            name = "fahrzeug_id",
+            updatable = false
+    )
+    private Long id;
 
     private String marke;
     private String modell;
     private double preis;
 
+    @ManyToOne
+    @JoinColumn(
+            name = "motorleistung_id",
+            nullable = false,
+            referencedColumnName = "motorleistung_id",
+            foreignKey = @ForeignKey(
+                    name = "fahrzeug_motorleistung_fk"
+            )
+    )
+    private Motorleistung motorleistung;
 
+    @ManyToOne
+    @JoinColumn(
+            name = "felgen_id",
+            nullable = false,
+            referencedColumnName = "felgen_id",
+            foreignKey = @ForeignKey(
+                    name = "fahrzeug_felgen_fk"
+            )
+    )
+    private Felgen felgen;
+
+    @ManyToOne
+    @JoinColumn(
+            name = "lackierung_id",
+            nullable = false,
+            referencedColumnName = "lackierung_id",
+            foreignKey = @ForeignKey(
+                    name = "fahrzeug_lackierung_fk"
+            )
+    )
+    private Lackierung lackierung;
 
 
 
     public Fahrzeuge() {
     }
 
-    public Fahrzeuge(String marke, String modell, double preis) {
+
+    public Fahrzeuge(String marke, String modell, double preis,Motorleistung motorleistung, Felgen felgen,Lackierung lackierung) {
         this.marke = marke;
         this.modell = modell;
         this.preis = preis;
+        this.motorleistung= motorleistung;
+        this.felgen=felgen;
+        this.lackierung=lackierung;
     }
 
 
     public Long getId() {
-        return fahrzeugeID;
+        return id;
     }
 
-    public void setId(Long fahrzeugeID) {
-        this.fahrzeugeID = fahrzeugeID;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getMarke() {
@@ -83,5 +122,39 @@ public class Fahrzeuge {
         }
     }
 
+    public Motorleistung getMotorleistung() {
+        return motorleistung;
+    }
 
+    public void setMotorleistung(Motorleistung motorleistung) {
+        if (motorleistung != null) {
+            this.motorleistung = motorleistung;
+        } else {
+            throw new IllegalArgumentException("motorleistung darf nicht null sein");
+        }
+    }
+
+    public Felgen getFelgen() {
+        return felgen;
+    }
+
+    public void setFelgen(Felgen felgen) {
+        if (felgen != null) {
+            this.felgen = felgen;
+        } else {
+            throw new IllegalArgumentException("felgen darf nicht null sein");
+        }
+    }
+
+    public Lackierung getLackierung() {
+        return lackierung;
+    }
+
+    public void setLackierung(Lackierung lackierung) {
+        if (lackierung != null) {
+            this.lackierung = lackierung;
+        } else {
+            throw new IllegalArgumentException("lackierung darf nicht null sein");
+        }
+    }
 }

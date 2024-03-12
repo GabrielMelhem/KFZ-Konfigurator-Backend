@@ -3,7 +3,7 @@ package com.example.carconfigurator.car.felgen;
 import jakarta.persistence.*;
 
 @Entity
-@Table
+@Table(name = "felgen")
 public class Felgen {
     @Id
     @SequenceGenerator(
@@ -16,7 +16,11 @@ public class Felgen {
             generator = "felgen_sequence"
     )
 
-    private Long felgenID;
+    @Column(
+            name="felgen_id",
+            updatable=false
+    )
+    private Long id;
 
     private String felgen_typ;
 
@@ -31,11 +35,11 @@ public class Felgen {
     }
 
     public Long getId() {
-        return felgenID;
+        return id;
     }
 
-    public void setId(Long felgenID) {
-        this.felgenID = felgenID;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getFelgen_typ() {

@@ -3,7 +3,7 @@ package com.example.carconfigurator.car.lackierung;
 import jakarta.persistence.*;
 
 @Entity
-@Table
+@Table(name = "lackierungen")
 public class Lackierung {
     @Id
     @SequenceGenerator(
@@ -15,7 +15,11 @@ public class Lackierung {
             strategy = GenerationType.SEQUENCE,
             generator = "lackierung_sequence"
     )
-    private Long lackierungID;
+    @Column(
+            name="lackierung_id",
+            updatable=false
+    )
+    private Long id;
 
     private String farbe;
 
@@ -30,11 +34,11 @@ public class Lackierung {
     }
 
     public Long getId() {
-        return lackierungID;
+        return id;
     }
 
-    public void setId(Long lackierungID) {
-        this.lackierungID = lackierungID;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getFarbe() {

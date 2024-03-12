@@ -2,22 +2,34 @@
   {
     "marke": "Volkswagen",
     "modell": "Der Polo",
-    "preis": 21590
+    "preis": 21590,
+    "motorleistung_id": 1,
+    "felgen_id": 1,
+    "lackierung_id": 3
   },
   {
     "marke": "Volkswagen",
     "modell": "Der Taigo",
-    "preis": 22000
+    "preis": 22000,
+    "motorleistung_id": 2,
+    "felgen_id": 2,
+    "lackierung_id": 1
   },
   {
     "marke": "Mercedes",
     "modell": "G Klass",
-    "preis":65000
+    "preis":65000,
+    "motorleistung_id": 1,
+    "felgen_id": 3,
+    "lackierung_id": 1
     },
     {
       "marke": "Mercedes",
       "modell": "GLA 250 e",
-      "preis": 57000
+      "preis": 57000,
+      "motorleistung_id": 1,
+      "felgen_id": 1,
+      "lackierung_id": 2
     }
 ]
 
