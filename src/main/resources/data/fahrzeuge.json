@@ -5,7 +5,8 @@
     "preis": 21590,
     "motorleistung_id": 1,
     "felgen_id": 1,
-    "lackierung_id": 3
+    "lackierung_id": 3,
+    "sonderausstattungen_ids":[1,2,3]
   },
   {
     "marke": "Volkswagen",
@@ -13,7 +14,8 @@
     "preis": 22000,
     "motorleistung_id": 2,
     "felgen_id": 2,
-    "lackierung_id": 1
+    "lackierung_id": 1,
+    "sonderausstattungen_ids":[1,2]
   },
   {
     "marke": "Mercedes",
@@ -21,7 +23,8 @@
     "preis":65000,
     "motorleistung_id": 1,
     "felgen_id": 3,
-    "lackierung_id": 1
+    "lackierung_id": 1,
+    "sonderausstattungen_ids":[1,2,3]
     },
     {
       "marke": "Mercedes",
@@ -29,7 +32,8 @@
       "preis": 57000,
       "motorleistung_id": 1,
       "felgen_id": 1,
-      "lackierung_id": 2
+      "lackierung_id": 2,
+      "sonderausstattungen_ids":[2,3]
     }
 ]
 

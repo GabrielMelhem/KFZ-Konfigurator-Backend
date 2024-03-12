@@ -3,7 +3,11 @@ package com.example.carconfigurator.car.fahrzeuge;
 import com.example.carconfigurator.car.felgen.Felgen;
 import com.example.carconfigurator.car.lackierung.Lackierung;
 import com.example.carconfigurator.car.motorleistung.Motorleistung;
+import com.example.carconfigurator.car.sonderausstattungen.Sonderausstattungen;
 import jakarta.persistence.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Entity
@@ -63,20 +67,26 @@ public class Fahrzeuge {
     private Lackierung lackierung;
 
 
+    @ManyToMany
+    @JoinTable(
+            name = "fahrzeuge_sonderausstattungen",
+            joinColumns = @JoinColumn(name = "fahrzeug_id",referencedColumnName = "fahrzeug_id"),
+            inverseJoinColumns = @JoinColumn(name = "sonderausstattung_id",referencedColumnName = "sonderausstattung_id")
+    )
+    private Set<Sonderausstattungen> sonderausstattungen = new HashSet<Sonderausstattungen>();
 
     public Fahrzeuge() {
     }
 
-
-    public Fahrzeuge(String marke, String modell, double preis,Motorleistung motorleistung, Felgen felgen,Lackierung lackierung) {
+    public Fahrzeuge(String marke, String modell, double preis, Motorleistung motorleistung, Felgen felgen, Lackierung lackierung, Set<Sonderausstattungen> sonderausstattungen) {
         this.marke = marke;
         this.modell = modell;
         this.preis = preis;
-        this.motorleistung= motorleistung;
-        this.felgen=felgen;
-        this.lackierung=lackierung;
+        this.motorleistung = motorleistung;
+        this.felgen = felgen;
+        this.lackierung = lackierung;
+        this.sonderausstattungen = sonderausstattungen;
     }
-
 
     public Long getId() {
         return id;
@@ -156,5 +166,13 @@ public class Fahrzeuge {
         } else {
             throw new IllegalArgumentException("lackierung darf nicht null sein");
         }
+    }
+
+    public Set<Sonderausstattungen> getSonderausstattungen() {
+        return sonderausstattungen;
+    }
+
+    public void setSonderausstattungen(Set<Sonderausstattungen> sonderausstattungen) {
+        this.sonderausstattungen = sonderausstattungen;
     }
 }

@@ -15,8 +15,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
-import java.util.List;
-import java.util.Map;
+import java.io.IOException;
+import java.util.*;
+import java.util.stream.Collectors;
 
 
 @Configuration
@@ -67,21 +68,33 @@ public class LoadDatabase {
 
 
             Resource resource = new ClassPathResource("data/fahrzeuge.json");
-            List<Map<String, String>> fahrzeuge = mapper.readValue(resource.getInputStream(), new TypeReference<List<Map<String, String>>>() {
-            });
+            try {
+            List<Map<String, Object>> fahrzeuge = mapper.readValue(resource.getInputStream(), new TypeReference<List<Map<String, Object>>>() {});
             fahrzeuge.forEach(fahrzeugMap -> {
-                Motorleistung motorleistung = motorleistungRepository.findById(Long.valueOf(fahrzeugMap.get("motorleistung_id"))).orElseThrow();
-                Felgen felgen = felgenRepository.findById(Long.valueOf(fahrzeugMap.get("felgen_id"))).orElseThrow();
-                Lackierung lackierung = lackierungRepository.findById(Long.valueOf(fahrzeugMap.get("lackierung_id"))).orElseThrow();
+                Motorleistung motorleistung = motorleistungRepository.findById(((Integer) fahrzeugMap.get("motorleistung_id")).longValue()).orElseThrow();
+                Felgen felgen = felgenRepository.findById(Long.valueOf(fahrzeugMap.get("felgen_id").toString())).orElseThrow();
+                Lackierung lackierung = lackierungRepository.findById(((Integer) fahrzeugMap.get("lackierung_id")).longValue()).orElseThrow();
+
+                List<Integer> sonderausstattungenIds = mapper.convertValue(fahrzeugMap.get("sonderausstattungen_ids"), new TypeReference<List<Integer>>() {});
+                Set<Sonderausstattungen> sonderausstattungenSet = sonderausstattungenIds.stream()
+                        .map(id -> sonderausstattungenRepository.findById(Long.valueOf(id)).orElseThrow())
+                        .collect(Collectors.toSet());
+
+
                 Fahrzeuge fahrzeug = new Fahrzeuge();
-                fahrzeug.setMarke(fahrzeugMap.get("marke"));
-                fahrzeug.setModell(fahrzeugMap.get("modell"));
-                fahrzeug.setPreis(Double.parseDouble(fahrzeugMap.get("preis")));
+                fahrzeug.setMarke((String) fahrzeugMap.get("marke"));
+                fahrzeug.setModell((String) fahrzeugMap.get("modell"));
+                fahrzeug.setPreis(Double.parseDouble(fahrzeugMap.get("preis").toString()));
                 fahrzeug.setMotorleistung(motorleistung);
                 fahrzeug.setFelgen(felgen);
                 fahrzeug.setLackierung(lackierung);
+                fahrzeug.setSonderausstattungen(sonderausstattungenSet);
+
                 fahrzeugeRepository.save(fahrzeug);
             });
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
 
             System.out.println("Daten wurden aus externen Dateien initialisiert");

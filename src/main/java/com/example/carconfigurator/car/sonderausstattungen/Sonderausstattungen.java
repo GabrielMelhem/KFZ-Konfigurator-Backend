@@ -1,9 +1,13 @@
 package com.example.carconfigurator.car.sonderausstattungen;
 
+import com.example.carconfigurator.car.fahrzeuge.Fahrzeuge;
 import jakarta.persistence.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
-@Table
+@Table(name = "sonderausstattungen")
 public class Sonderausstattungen {
     @Id
     @SequenceGenerator(
@@ -15,12 +19,16 @@ public class Sonderausstattungen {
             strategy = GenerationType.SEQUENCE,
             generator = "sonderausstattungen_sequence"
     )
-
-    private Long sonderausstattungenID;
+    @Column(
+            name = "sonderausstattung_id",
+            updatable = false
+    )
+    private Long id;
 
     private String sonderausstattung_name;
 
     private double preis;
+
 
     public Sonderausstattungen() {
     }
@@ -31,11 +39,11 @@ public class Sonderausstattungen {
     }
 
     public Long getId() {
-        return sonderausstattungenID;
+        return id;
     }
 
-    public void setId(Long sonderausstattungenID) {
-        this.sonderausstattungenID = sonderausstattungenID;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getSonderausstattung_name() {
