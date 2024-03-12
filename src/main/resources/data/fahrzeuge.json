@@ -2,38 +2,182 @@
   {
     "marke": "Volkswagen",
     "modell": "Der Polo",
-    "preis": 21590,
+    "preis": 21.590,
     "motorleistung_id": 1,
     "felgen_id": 1,
+    "lackierung_id": 1,
+    "sonderausstattungen_ids":[]
+  },
+  {
+    "marke": "Volkswagen",
+    "modell": "Der Polo",
+    "preis": 21.590,
+    "motorleistung_id": 2,
+    "felgen_id": 2,
+    "lackierung_id": 2,
+    "sonderausstattungen_ids":[]
+  },
+  {
+    "marke": "Volkswagen",
+    "modell": "Der Polo",
+    "preis": 21.590,
+    "motorleistung_id": 3,
+    "felgen_id": 3,
     "lackierung_id": 3,
-    "sonderausstattungen_ids":[1,2,3]
+    "sonderausstattungen_ids":[]
   },
   {
     "marke": "Volkswagen",
     "modell": "Der Taigo",
-    "preis": 22000,
+    "preis": 22.000,
+    "motorleistung_id": 3,
+    "felgen_id": 2,
+    "lackierung_id": 2,
+    "sonderausstattungen_ids":[]
+  },
+  {
+    "marke": "Volkswagen",
+    "modell": "Der Taigo",
+    "preis": 22.000,
+    "motorleistung_id": 4,
+    "felgen_id": 4,
+    "lackierung_id": 1,
+    "sonderausstattungen_ids":[]
+  },
+  {
+    "marke": "Volkswagen",
+    "modell": "Der neue T-Cross",
+    "preis": 23.250,
     "motorleistung_id": 2,
     "felgen_id": 2,
     "lackierung_id": 1,
-    "sonderausstattungen_ids":[1,2]
+    "sonderausstattungen_ids":[]
+  },
+  {
+    "marke": "Volkswagen",
+    "modell": "Der neue T-Cross",
+    "preis": 23.250,
+    "motorleistung_id": 3,
+    "felgen_id": 3,
+    "lackierung_id": 3,
+    "sonderausstattungen_ids":[]
+  },
+  {
+    "marke": "Volkswagen",
+    "modell": "Der neue T-Cross",
+    "preis": 23.250,
+    "motorleistung_id": 4,
+    "felgen_id": 4,
+    "lackierung_id": 2,
+    "sonderausstattungen_ids":[]
   },
   {
     "marke": "Mercedes",
     "modell": "G Klass",
-    "preis":65000,
-    "motorleistung_id": 1,
-    "felgen_id": 3,
+    "preis":65.450,
+    "motorleistung_id": 2,
+    "felgen_id": 2,
     "lackierung_id": 1,
-    "sonderausstattungen_ids":[1,2,3]
+    "sonderausstattungen_ids":[]
     },
-    {
+  {
+      "marke": "Mercedes",
+      "modell": "G Klass",
+      "preis":65.450,
+      "motorleistung_id": 3,
+      "felgen_id": 3,
+      "lackierung_id": 2,
+      "sonderausstattungen_ids":[]
+    },
+  {
+      "marke": "Mercedes",
+      "modell": "G Klass",
+      "preis":65.450,
+      "motorleistung_id": 4,
+      "felgen_id": 4,
+      "lackierung_id": 4,
+      "sonderausstattungen_ids":[]
+    },
+  {
       "marke": "Mercedes",
       "modell": "GLA 250 e",
-      "preis": 57000,
+      "preis": 57.890,
       "motorleistung_id": 1,
-      "felgen_id": 1,
-      "lackierung_id": 2,
-      "sonderausstattungen_ids":[2,3]
-    }
+      "felgen_id": 2,
+      "lackierung_id": 1,
+      "sonderausstattungen_ids":[]
+    },
+  {
+    "marke": "Mercedes",
+    "modell": "GLA 250 e",
+    "preis": 57.890,
+    "motorleistung_id": 3,
+    "felgen_id": 3,
+    "lackierung_id": 4,
+    "sonderausstattungen_ids":[]
+  },
+  {
+    "marke": "Mercedes",
+    "modell": "GLA 250 e",
+    "preis": 57.890,
+    "motorleistung_id": 4,
+    "felgen_id": 4,
+    "lackierung_id": 3,
+    "sonderausstattungen_ids":[]
+  },
+  {
+      "marke": "BMW",
+      "modell": "X5",
+      "preis":91.700,
+      "motorleistung_id": 3,
+      "felgen_id": 4,
+      "lackierung_id": 4,
+      "sonderausstattungen_ids":[]
+    },
+  {
+    "marke": "BMW",
+    "modell": "X5",
+    "preis":91.700,
+    "motorleistung_id": 4,
+    "felgen_id": 2,
+    "lackierung_id": 3,
+    "sonderausstattungen_ids":[]
+  },
+  {
+    "marke": "BMW",
+    "modell": "X5",
+    "preis":91.700,
+    "motorleistung_id": 1,
+    "felgen_id": 3,
+    "lackierung_id": 2,
+    "sonderausstattungen_ids":[]
+  },
+  {
+      "marke": "BMW",
+      "modell": "i7",
+      "preis":115.700,
+      "motorleistung_id": 4,
+      "felgen_id": 2,
+      "lackierung_id": 6,
+      "sonderausstattungen_ids":[]
+    },
+  {
+    "marke": "BMW",
+    "modell": "i7",
+    "preis":115.700,
+    "motorleistung_id": 2,
+    "felgen_id": 1,
+    "lackierung_id": 3,
+    "sonderausstattungen_ids":[]
+  },
+  {
+    "marke": "BMW",
+    "modell": "i7",
+    "preis":115.700,
+    "motorleistung_id": 1,
+    "felgen_id": 4,
+    "lackierung_id": 3,
+    "sonderausstattungen_ids":[]
+  }
 ]
 
