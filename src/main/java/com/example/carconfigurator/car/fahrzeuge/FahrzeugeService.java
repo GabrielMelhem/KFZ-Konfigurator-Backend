@@ -22,12 +22,19 @@ public class FahrzeugeService {
         return fahrzeugeRepository.findById(id);
     }
 
+
+    /////////////////////
+
+/*
+
     public Fahrzeuge save(Fahrzeuge fahrzeug) {
         return fahrzeugeRepository.save(fahrzeug);
     }
 
+
     public void deleteById(Long id) {
         fahrzeugeRepository.deleteById(id);
     }
-    
+
+*/
 }

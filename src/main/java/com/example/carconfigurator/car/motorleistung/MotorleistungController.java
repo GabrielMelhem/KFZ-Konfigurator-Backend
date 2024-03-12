@@ -2,6 +2,7 @@ package com.example.carconfigurator.car.motorleistung;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,11 +18,13 @@ public class MotorleistungController {
         this.motorleistungService = motorleistungService;
     }
 
-
     @GetMapping
     public List <Motorleistung> getMotorleistung(){
         return motorleistungService.getMotorleistung();
     }
 
-
+    @GetMapping("/{modell}")
+    public List<Motorleistung> getMotorleistungenByFahrzeugModell(@PathVariable String modell) {
+        return motorleistungService.getMotorleistungByFahrzeugModell(modell);
+    }
 }

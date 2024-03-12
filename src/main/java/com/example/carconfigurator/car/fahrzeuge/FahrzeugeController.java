@@ -21,14 +21,24 @@ public class FahrzeugeController {
     @GetMapping
     public List<Fahrzeuge> getFahrzeuge(){return fahrzeugeService.getFahrzeuge();}
 
+
     // Abrufen eines Fahrzeugs nach ID
-    @GetMapping("api/v1/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Fahrzeuge> getFahrzeugById(@PathVariable Long id) {
         return fahrzeugeService.findById(id)
                 .map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+
+
+
+
+    ///////////////////////////////////
+
+
+
+/*
     // Hinzufügen eines neuen Fahrzeugs
     @PostMapping
     public Fahrzeuge addFahrzeug(@RequestBody Fahrzeuge fahrzeug) {
@@ -59,5 +69,10 @@ public class FahrzeugeController {
                 })
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
+
+ */
+
+
+
 }
 

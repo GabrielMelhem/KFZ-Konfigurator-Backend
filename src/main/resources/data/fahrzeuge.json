@@ -131,7 +131,7 @@
       "preis":91.700,
       "motorleistung_id": 3,
       "felgen_id": 4,
-      "lackierung_id": 4,
+      "lackierung_id": 2,
       "sonderausstattungen_ids":[]
     },
   {
@@ -140,14 +140,14 @@
     "preis":91.700,
     "motorleistung_id": 4,
     "felgen_id": 2,
-    "lackierung_id": 3,
+    "lackierung_id": 1,
     "sonderausstattungen_ids":[]
   },
   {
     "marke": "BMW",
     "modell": "X5",
     "preis":91.700,
-    "motorleistung_id": 1,
+    "motorleistung_id": 3,
     "felgen_id": 3,
     "lackierung_id": 2,
     "sonderausstattungen_ids":[]

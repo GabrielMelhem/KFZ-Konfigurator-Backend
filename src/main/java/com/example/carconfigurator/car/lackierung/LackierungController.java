@@ -2,6 +2,7 @@ package com.example.carconfigurator.car.lackierung;
 
 import com.example.carconfigurator.car.fahrzeuge.Fahrzeuge;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,4 +20,10 @@ public class LackierungController {
 
     @GetMapping
     public List<Lackierung> getLackierungen(){return lackierungService.getLackierungen();}
+
+
+    @GetMapping("/{modell}")
+    public List<Lackierung> getLackierungenByFahrzeugModell(@PathVariable String modell){
+        return lackierungService.getLackierungenByFahrzeugModell(modell);
+    }
 }
