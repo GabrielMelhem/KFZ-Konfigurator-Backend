@@ -1,6 +1,6 @@
 package com.example.carconfigurator.car.fahrzeuge;
 
-import com.example.carconfigurator.car.motorleistung.*;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

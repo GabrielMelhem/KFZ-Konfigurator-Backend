@@ -1,5 +1,6 @@
-package com.example.carconfigurator.car.fahrzeuge;
+package com.example.carconfigurator.car.bestellungen;
 
+import com.example.carconfigurator.car.fahrzeuge.Fahrzeuge;
 import com.example.carconfigurator.car.felgen.Felgen;
 import com.example.carconfigurator.car.lackierung.Lackierung;
 import com.example.carconfigurator.car.motorleistung.Motorleistung;
@@ -9,29 +10,35 @@ import jakarta.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-
 @Entity
-@Table(name="fahrzeuge")
-public class Fahrzeuge {
+@Table(name="bestellungen")
+public class Bestellungen {
     @Id
     @SequenceGenerator(
-            name = "fahrzeuge_sequence",
-            sequenceName = "fahrzeuge_sequence",
+            name = "bestellungen_sequence",
+            sequenceName = "bestellungen_sequence",
             allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "fahrzeuge_sequence"
+            generator = "bestellungen_sequence"
     )
     @Column(
-            name = "fahrzeug_id",
+            name = "bestellung_id",
             updatable = false
     )
     private Long id;
 
-    private String marke;
-    private String modell;
-    private double preis;
+    @ManyToOne
+    @JoinColumn(
+            name = "fahrzeug_id",
+            nullable = false,
+            referencedColumnName = "fahrzeug_id",
+            foreignKey = @ForeignKey(
+                    name = "bestellung_fahrzeug_fk"
+            )
+    )
+    private Fahrzeuge fahrzeug;
 
     @ManyToOne
     @JoinColumn(
@@ -39,7 +46,7 @@ public class Fahrzeuge {
             nullable = false,
             referencedColumnName = "motorleistung_id",
             foreignKey = @ForeignKey(
-                    name = "fahrzeug_motorleistung_fk"
+                    name = "bestellung_motorleistung_fk"
             )
     )
     private Motorleistung motorleistung;
@@ -50,7 +57,7 @@ public class Fahrzeuge {
             nullable = false,
             referencedColumnName = "felgen_id",
             foreignKey = @ForeignKey(
-                    name = "fahrzeug_felgen_fk"
+                    name = "bestellung_felgen_fk"
             )
     )
     private Felgen felgen;
@@ -61,7 +68,7 @@ public class Fahrzeuge {
             nullable = false,
             referencedColumnName = "lackierung_id",
             foreignKey = @ForeignKey(
-                    name = "fahrzeug_lackierung_fk"
+                    name = "bestellung_lackierung_fk"
             )
     )
     private Lackierung lackierung;
@@ -69,23 +76,26 @@ public class Fahrzeuge {
 
     @ManyToMany
     @JoinTable(
-            name = "fahrzeuge_sonderausstattungen",
-            joinColumns = @JoinColumn(name = "fahrzeug_id",referencedColumnName = "fahrzeug_id"),
+            name = "bestellungen_sonderausstattungen",
+            joinColumns = @JoinColumn(name = "bestellung_id",referencedColumnName = "bestellung_id"),
             inverseJoinColumns = @JoinColumn(name = "sonderausstattung_id",referencedColumnName = "sonderausstattung_id")
     )
     private Set<Sonderausstattungen> sonderausstattungen = new HashSet<Sonderausstattungen>();
 
-    public Fahrzeuge() {
+    private double gesamtpreis;
+    private String date;
+
+    public Bestellungen() {
     }
 
-    public Fahrzeuge(String marke, String modell, double preis, Motorleistung motorleistung, Felgen felgen, Lackierung lackierung, Set<Sonderausstattungen> sonderausstattungen) {
-        this.marke = marke;
-        this.modell = modell;
-        this.preis = preis;
+    public Bestellungen(Fahrzeuge fahrzeug, Motorleistung motorleistung, Felgen felgen, Lackierung lackierung, Set<Sonderausstattungen> sonderausstattungen, double gesamtpreis, String date) {
+        this.fahrzeug = fahrzeug;
         this.motorleistung = motorleistung;
         this.felgen = felgen;
         this.lackierung = lackierung;
         this.sonderausstattungen = sonderausstattungen;
+        this.gesamtpreis = gesamtpreis;
+        this.date = date;
     }
 
     public Long getId() {
@@ -96,39 +106,15 @@ public class Fahrzeuge {
         this.id = id;
     }
 
-    public String getMarke() {
-        return marke;
+    public Fahrzeuge getFahrzeug() {
+        return fahrzeug;
     }
 
-    public void setMarke(String marke) {
-        if (marke != null) {
-            this.marke = marke.trim();
+    public void setFahrzeug(Fahrzeuge fahrzeug) {
+        if (fahrzeug != null) {
+            this.fahrzeug = fahrzeug;
         } else {
-            throw new IllegalArgumentException("Marke darf nicht null sein");
-        }
-    }
-
-    public String getModell() {
-        return modell;
-    }
-
-    public void setModell(String modell) {
-        if (modell != null) {
-            this.modell = modell.trim();
-        } else {
-            throw new IllegalArgumentException("Modell darf nicht null sein");
-        }
-    }
-
-    public double getPreis() {
-        return preis;
-    }
-
-    public void setPreis(double preis) {
-        if (preis > 0) {
-            this.preis = preis;
-        } else {
-            throw new IllegalArgumentException("Der Preis muss größer als 0 sein");
+            throw new IllegalArgumentException("fahrzeug darf nicht null sein");
         }
     }
 
@@ -177,6 +163,30 @@ public class Fahrzeuge {
             this.sonderausstattungen = sonderausstattungen;
         } else {
             throw new IllegalArgumentException("sonderausstattungen darf nicht null sein");
+        }
+    }
+
+    public double getGesamtpreis() {
+        return gesamtpreis;
+    }
+
+    public void setGesamtpreis(double gesamtpreis) {
+        if (gesamtpreis > 0) {
+            this.gesamtpreis = gesamtpreis;
+        } else {
+            throw new IllegalArgumentException("gesamtpreis darf nicht null sein");
+        }
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        if (date != null) {
+            this.date = date;
+        } else {
+            throw new IllegalArgumentException("date darf nicht null sein");
         }
     }
 }
