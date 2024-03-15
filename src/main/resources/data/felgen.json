@@ -1,0 +1,6 @@
+[
+  {"felgen_typ":"S","preis": 3000},
+  {"felgen_typ":"M","preis": 4000},
+  {"felgen_typ":"L","preis": 5000},
+  {"felgen_typ":"Pro","preis": 7000}
+]

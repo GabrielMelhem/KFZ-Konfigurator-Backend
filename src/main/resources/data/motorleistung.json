@@ -1,0 +1,6 @@
+[
+  {"motor_name":"Pro S","leistung": 150,"preis": 15000},
+  {"motor_name":"Pro ","leistung": 200,"preis": 20000},
+  {"motor_name":"Pro M","leistung": 250,"preis": 25000},
+  {"motor_name":"Pro L","leistung": 300,"preis": 30000}
+]
