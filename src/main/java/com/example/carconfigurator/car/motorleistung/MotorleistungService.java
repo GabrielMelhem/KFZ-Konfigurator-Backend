@@ -1,5 +1,6 @@
 package com.example.carconfigurator.car.motorleistung;
 
+import com.example.carconfigurator.car.common.exceptions.NotFoundException;
 import com.example.carconfigurator.car.fahrzeuge.Fahrzeuge;
 import com.example.carconfigurator.car.fahrzeuge.FahrzeugeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
