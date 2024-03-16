@@ -45,23 +45,18 @@ public class BilderService {
         // Save the file to the file system
         file.transferTo(destinationFilePath);
 
-        // After saving the file, create a new FileData entity
-        /*Bilder bilder = new Bilder();
-        bilder.setName(originalFileName);
-        bilder.setType(file.getContentType());
-        bilder.setBildPath(destinationFilePath.toString());
-
-        // Save the fileData entity to the database
-        BilderRepository.save(bilder);*/
-
         // Return the path or some identifier of the stored file
         return destinationFilePath.toString();
-
 
     }
 
     public Path getFilePath(String fileName) {
         Path rootLocation = Paths.get("/Users/gabimelhem/Desktop/MyFiles");
         return rootLocation.resolve(fileName);
+    }
+
+
+    public List<String> findBildPathsEndingWithName(String suffix) {
+        return bilderRepository.findBildPathByBildNameEndingWith(suffix);
     }
 }

@@ -69,4 +69,13 @@ public class BilderController {
         }
     }
 
+
+    @GetMapping("/fileSystem/endwith/{suffix}")
+    public ResponseEntity<List<String>> getBildPathsBySuffix(@PathVariable String suffix) {
+        List<String> filePaths = bilderService.findBildPathsEndingWithName(suffix);
+        if(filePaths.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(filePaths);
+    }
 }
