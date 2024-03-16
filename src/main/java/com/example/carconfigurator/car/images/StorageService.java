@@ -32,12 +32,22 @@ public class StorageService {
         if (!Files.exists(storageDirectory)) {
             Files.createDirectories(storageDirectory);
         }
-
         // Resolve the file path to save the file
         Path destinationFilePath = storageDirectory.resolve(originalFileName);
-
         // Save the file to the file system
         file.transferTo(destinationFilePath);
+
+
+
+        // After saving the file, create a new FileData entity
+        FileData fileData = new FileData();
+        fileData.setName(originalFileName);
+        fileData.setType(file.getContentType());
+        fileData.setFilePath(destinationFilePath.toString());
+
+        // Save the fileData entity to the database
+        fileDataRepository.save(fileData);
+
 
         // Return the path or some identifier of the stored file
         return destinationFilePath.toString();
