@@ -37,6 +37,7 @@ public class LoadDatabase {
     @Value("classpath:${data.fahrzeuge}")
     private Resource fahrzeugeData;
 
+
     @Bean
     CommandLineRunner initDatabase(MotorleistungRepository motorleistungRepository,
                                    LackierungRepository lackierungRepository,

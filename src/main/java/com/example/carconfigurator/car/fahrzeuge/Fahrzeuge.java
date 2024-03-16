@@ -1,10 +1,12 @@
 package com.example.carconfigurator.car.fahrzeuge;
 
 import com.example.carconfigurator.car.felgen.Felgen;
+import com.example.carconfigurator.car.images.FileData;
 import com.example.carconfigurator.car.lackierung.Lackierung;
 import com.example.carconfigurator.car.motorleistung.Motorleistung;
 import com.example.carconfigurator.car.sonderausstattungen.Sonderausstattungen;
 import jakarta.persistence.*;
+import lombok.Setter;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -13,6 +15,8 @@ import java.util.Set;
 @Entity
 @Table(name="fahrzeuge")
 public class Fahrzeuge {
+
+    @Setter
     @Id
     @SequenceGenerator(
             name = "fahrzeuge_sequence",
@@ -75,10 +79,16 @@ public class Fahrzeuge {
     )
     private Set<Sonderausstattungen> sonderausstattungen = new HashSet<Sonderausstattungen>();
 
+
+
+    @Setter
+    @OneToMany(mappedBy = "fahrzeuge", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<FileData> images = new HashSet<>();
+
     public Fahrzeuge() {
     }
 
-    public Fahrzeuge(String marke, String modell, double preis, Motorleistung motorleistung, Felgen felgen, Lackierung lackierung, Set<Sonderausstattungen> sonderausstattungen) {
+    public Fahrzeuge(String marke, String modell, double preis, Motorleistung motorleistung, Felgen felgen, Lackierung lackierung, Set<Sonderausstattungen> sonderausstattungen, Set<FileData> images) {
         this.marke = marke;
         this.modell = modell;
         this.preis = preis;
@@ -86,14 +96,11 @@ public class Fahrzeuge {
         this.felgen = felgen;
         this.lackierung = lackierung;
         this.sonderausstattungen = sonderausstattungen;
+        this.images = images;
     }
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getMarke() {
@@ -179,4 +186,9 @@ public class Fahrzeuge {
             throw new IllegalArgumentException("sonderausstattungen darf nicht null sein");
         }
     }
+
+    public Set<FileData> getImages() {
+        return images;
+    }
+
 }

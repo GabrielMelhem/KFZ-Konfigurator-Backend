@@ -1,5 +1,6 @@
 package com.example.carconfigurator.car.images;
 
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -20,6 +21,7 @@ public class StorageService {
 
     /*private final Path rootLocation = Paths.get("/Users/gabimelhem/Desktop/MyFiles");*/
 
+    @Transactional
     public String uploadImageToFileSystem(MultipartFile file, String originalFileName) throws IOException {
         /*String filename = UUID.randomUUID().toString() + "_" + file.getOriginalFilename();
         Path savePath = this.rootLocation.resolve(filename);
