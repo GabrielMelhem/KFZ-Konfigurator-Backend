@@ -5,6 +5,7 @@ import com.example.carconfigurator.car.lackierung.Lackierung;
 import com.example.carconfigurator.car.motorleistung.Motorleistung;
 import com.example.carconfigurator.car.sonderausstattungen.Sonderausstattungen;
 import jakarta.persistence.*;
+import lombok.Setter;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -13,6 +14,8 @@ import java.util.Set;
 @Entity
 @Table(name="fahrzeuge")
 public class Fahrzeuge {
+
+    @Setter
     @Id
     @SequenceGenerator(
             name = "fahrzeuge_sequence",
@@ -75,6 +78,9 @@ public class Fahrzeuge {
     )
     private Set<Sonderausstattungen> sonderausstattungen = new HashSet<Sonderausstattungen>();
 
+
+
+
     public Fahrzeuge() {
     }
 
@@ -86,14 +92,11 @@ public class Fahrzeuge {
         this.felgen = felgen;
         this.lackierung = lackierung;
         this.sonderausstattungen = sonderausstattungen;
+
     }
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getMarke() {
@@ -179,4 +182,6 @@ public class Fahrzeuge {
             throw new IllegalArgumentException("sonderausstattungen darf nicht null sein");
         }
     }
+
+
 }

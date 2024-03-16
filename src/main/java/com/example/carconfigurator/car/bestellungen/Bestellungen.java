@@ -85,10 +85,13 @@ public class Bestellungen {
     private double gesamtpreis;
     private String date;
 
+    @Column(unique = true)
+    private String urlSlug;
+
     public Bestellungen() {
     }
 
-    public Bestellungen(Fahrzeuge fahrzeug, Motorleistung motorleistung, Felgen felgen, Lackierung lackierung, Set<Sonderausstattungen> sonderausstattungen, double gesamtpreis, String date) {
+    public Bestellungen(Fahrzeuge fahrzeug, Motorleistung motorleistung, Felgen felgen, Lackierung lackierung, Set<Sonderausstattungen> sonderausstattungen, double gesamtpreis, String date, String urlSlug) {
         this.fahrzeug = fahrzeug;
         this.motorleistung = motorleistung;
         this.felgen = felgen;
@@ -96,6 +99,7 @@ public class Bestellungen {
         this.sonderausstattungen = sonderausstattungen;
         this.gesamtpreis = gesamtpreis;
         this.date = date;
+        this.urlSlug = urlSlug;
     }
 
     public Long getId() {
@@ -188,5 +192,18 @@ public class Bestellungen {
         } else {
             throw new IllegalArgumentException("date darf nicht null sein");
         }
+    }
+
+    public String getUrlSlug() {
+        return urlSlug;
+    }
+
+    public void setUrlSlug(String urlSlug) {
+        if (urlSlug != null) {
+            this.urlSlug = urlSlug;
+        } else {
+            throw new IllegalArgumentException("URL darf nicht null sein");
+        }
+
     }
 }
