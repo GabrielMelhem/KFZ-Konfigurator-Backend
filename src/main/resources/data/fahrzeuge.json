@@ -6,19 +6,7 @@
     "motorleistung_id": 1,
     "felgen_id": 1,
     "lackierung_id": 1,
-    "sonderausstattungen_ids":[],
-    "images": [
-      {
-        "name": "1Der Polo.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/1Der Polo.png"
-      },
-      {
-        "name": "2Der Polo.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/2Der Polo.png"
-      }
-    ]
+    "sonderausstattungen_ids":[]
   },
   {
     "marke": "Volkswagen",
@@ -27,19 +15,7 @@
     "motorleistung_id": 2,
     "felgen_id": 2,
     "lackierung_id": 2,
-    "sonderausstattungen_ids":[],
-    "images": [
-      {
-        "name": "1Der Polo.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/1Der Polo.png"
-      },
-      {
-        "name": "2Der Polo.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/2Der Polo.png"
-      }
-    ]
+    "sonderausstattungen_ids":[]
   },
   {
     "marke": "Volkswagen",
@@ -48,19 +24,7 @@
     "motorleistung_id": 3,
     "felgen_id": 3,
     "lackierung_id": 3,
-    "sonderausstattungen_ids":[],
-    "images": [
-      {
-        "name": "1Der Polo.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/1Der Polo.png"
-      },
-      {
-        "name": "2Der Polo.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/2Der Polo.png"
-      }
-    ]
+    "sonderausstattungen_ids":[]
   },
   {
     "marke": "Volkswagen",
@@ -69,19 +33,7 @@
     "motorleistung_id": 3,
     "felgen_id": 2,
     "lackierung_id": 2,
-    "sonderausstattungen_ids":[],
-    "images": [
-      {
-        "name": "1Der Taigo.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/1Der Taigo.png"
-      },
-      {
-        "name": "2Der Taigo.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/2Der Taigo.png"
-      }
-    ]
+    "sonderausstattungen_ids":[]
   },
   {
     "marke": "Volkswagen",
@@ -90,19 +42,7 @@
     "motorleistung_id": 4,
     "felgen_id": 4,
     "lackierung_id": 1,
-    "sonderausstattungen_ids":[],
-    "images": [
-      {
-        "name": "1Der Taigo.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/1Der Taigo.png"
-      },
-      {
-        "name": "2Der Taigo.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/2Der Taigo.png"
-      }
-    ]
+    "sonderausstattungen_ids":[]
   },
   {
     "marke": "Volkswagen",
@@ -111,19 +51,7 @@
     "motorleistung_id": 2,
     "felgen_id": 2,
     "lackierung_id": 1,
-    "sonderausstattungen_ids":[],
-    "images": [
-      {
-        "name": "1Der neue T-Cross.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/2Der neue T-Cross.png"
-      },
-      {
-        "name": "2Der neue T-Cross.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/2Der neue T-Cross.png"
-      }
-    ]
+    "sonderausstattungen_ids":[]
   },
   {
     "marke": "Volkswagen",
@@ -132,19 +60,7 @@
     "motorleistung_id": 3,
     "felgen_id": 3,
     "lackierung_id": 3,
-    "sonderausstattungen_ids":[],
-    "images": [
-      {
-        "name": "1Der neue T-Cross.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/2Der neue T-Cross.png"
-      },
-      {
-        "name": "2Der neue T-Cross.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/2Der neue T-Cross.png"
-      }
-    ]
+    "sonderausstattungen_ids":[]
   },
   {
     "marke": "Volkswagen",
@@ -153,19 +69,7 @@
     "motorleistung_id": 4,
     "felgen_id": 4,
     "lackierung_id": 2,
-    "sonderausstattungen_ids":[],
-    "images": [
-      {
-        "name": "1Der neue T-Cross.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/2Der neue T-Cross.png"
-      },
-      {
-        "name": "2Der neue T-Cross.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/2Der neue T-Cross.png"
-      }
-    ]
+    "sonderausstattungen_ids":[]
   },
   {
     "marke": "Mercedes",
@@ -174,34 +78,7 @@
     "motorleistung_id": 2,
     "felgen_id": 2,
     "lackierung_id": 1,
-    "sonderausstattungen_ids":[],
-    "images": [
-      {
-        "name": "1GKlass.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/1GKlass.png"
-      },
-      {
-        "name": "2GKlass.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/2GKlass.png"
-      },
-      {
-        "name": "3GKlass.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/3GKlass.png"
-      },
-      {
-        "name": "4GKlass.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/4GKlass.png"
-      },
-      {
-        "name": "5GKlass.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/5GKlass.png"
-      }
-    ]
+    "sonderausstattungen_ids":[]
     },
   {
       "marke": "Mercedes",
@@ -210,34 +87,7 @@
       "motorleistung_id": 3,
       "felgen_id": 3,
       "lackierung_id": 2,
-      "sonderausstattungen_ids":[],
-       "images": [
-      {
-        "name": "1GKlass.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/1GKlass.png"
-      },
-      {
-        "name": "2GKlass.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/2GKlass.png"
-      },
-      {
-        "name": "3GKlass.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/3GKlass.png"
-      },
-      {
-        "name": "4GKlass.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/4GKlass.png"
-      },
-      {
-        "name": "5GKlass.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/5GKlass.png"
-      }
-    ]
+      "sonderausstattungen_ids":[]
     },
   {
       "marke": "Mercedes",
@@ -246,34 +96,7 @@
       "motorleistung_id": 4,
       "felgen_id": 4,
       "lackierung_id": 4,
-      "sonderausstattungen_ids":[],
-      "images": [
-      {
-        "name": "1GKlass.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/1GKlass.png"
-      },
-      {
-        "name": "2GKlass.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/2GKlass.png"
-      },
-      {
-        "name": "3GKlass.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/3GKlass.png"
-      },
-      {
-        "name": "4GKlass.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/4GKlass.png"
-      },
-      {
-        "name": "5GKlass.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/5GKlass.png"
-      }
-    ]
+      "sonderausstattungen_ids":[]
     },
   {
       "marke": "Mercedes",
@@ -282,19 +105,7 @@
       "motorleistung_id": 1,
       "felgen_id": 2,
       "lackierung_id": 1,
-      "sonderausstattungen_ids":[],
-      "images": [
-        {
-          "name": "1GLA 250 e.png",
-          "type": "image/png",
-          "filePath": "/Users/gabimelhem/Desktop/MyFiles/1GLA 250 e.png"
-        },
-        {
-          "name": "2GLA 250 e.png",
-          "type": "image/png",
-          "filePath": "/Users/gabimelhem/Desktop/MyFiles/2GLA 250 e.png"
-        }
-      ]
+      "sonderausstattungen_ids":[]
     },
   {
     "marke": "Mercedes",
@@ -303,19 +114,7 @@
     "motorleistung_id": 3,
     "felgen_id": 3,
     "lackierung_id": 4,
-    "sonderausstattungen_ids":[],
-    "images": [
-      {
-        "name": "1GLA 250 e.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/1GLA 250 e.png"
-      },
-      {
-        "name": "2GLA 250 e.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/2GLA 250 e.png"
-      }
-    ]
+    "sonderausstattungen_ids":[]
   },
   {
     "marke": "Mercedes",
@@ -324,19 +123,7 @@
     "motorleistung_id": 4,
     "felgen_id": 4,
     "lackierung_id": 3,
-    "sonderausstattungen_ids":[],
-    "images": [
-      {
-        "name": "1GLA 250 e.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/1GLA 250 e.png"
-      },
-      {
-        "name": "2GLA 250 e.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/2GLA 250 e.png"
-      }
-    ]
+    "sonderausstattungen_ids":[]
   },
   {
       "marke": "BMW",
@@ -345,19 +132,7 @@
       "motorleistung_id": 3,
       "felgen_id": 4,
       "lackierung_id": 2,
-      "sonderausstattungen_ids":[],
-      "images": [
-        {
-          "name": "1X5.png",
-          "type": "image/png",
-          "filePath": "/Users/gabimelhem/Desktop/MyFiles/1X5.png"
-        },
-        {
-          "name": "2X5.png",
-          "type": "image/png",
-          "filePath": "/Users/gabimelhem/Desktop/MyFiles/1X5.png"
-        }
-      ]
+      "sonderausstattungen_ids":[]
     },
   {
     "marke": "BMW",
@@ -366,19 +141,7 @@
     "motorleistung_id": 4,
     "felgen_id": 2,
     "lackierung_id": 1,
-    "sonderausstattungen_ids":[],
-    "images": [
-      {
-        "name": "1X5.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/1X5.png"
-      },
-      {
-        "name": "2X5.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/1X5.png"
-      }
-    ]
+    "sonderausstattungen_ids":[]
   },
   {
     "marke": "BMW",
@@ -387,19 +150,7 @@
     "motorleistung_id": 3,
     "felgen_id": 3,
     "lackierung_id": 2,
-    "sonderausstattungen_ids":[],
-    "images": [
-      {
-        "name": "1X5.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/1X5.png"
-      },
-      {
-        "name": "2X5.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/1X5.png"
-      }
-    ]
+    "sonderausstattungen_ids":[]
   },
   {
       "marke": "BMW",
@@ -408,19 +159,7 @@
       "motorleistung_id": 4,
       "felgen_id": 2,
       "lackierung_id": 6,
-      "sonderausstattungen_ids":[],
-      "images": [
-      {
-        "name": "1I7.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/1I7.png"
-      },
-      {
-        "name": "2I7.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/2I7.png"
-      }
-    ]
+      "sonderausstattungen_ids":[]
     },
   {
     "marke": "BMW",
@@ -429,19 +168,7 @@
     "motorleistung_id": 2,
     "felgen_id": 1,
     "lackierung_id": 3,
-    "sonderausstattungen_ids":[],
-    "images": [
-      {
-        "name": "1I7.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/1I7.png"
-      },
-      {
-        "name": "2I7.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/2I7.png"
-      }
-    ]
+    "sonderausstattungen_ids":[]
   },
   {
     "marke": "BMW",
@@ -450,19 +177,7 @@
     "motorleistung_id": 1,
     "felgen_id": 4,
     "lackierung_id": 3,
-    "sonderausstattungen_ids":[],
-    "images": [
-      {
-        "name": "1I7.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/1I7.png"
-      },
-      {
-        "name": "2I7.png",
-        "type": "image/png",
-        "filePath": "/Users/gabimelhem/Desktop/MyFiles/2I7.png"
-      }
-    ]
+    "sonderausstattungen_ids":[]
   }
 ]
 
