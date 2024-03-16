@@ -81,14 +81,11 @@ public class Fahrzeuge {
 
 
 
-    @Setter
-    @OneToMany(mappedBy = "fahrzeuge", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<FileData> images = new HashSet<>();
 
     public Fahrzeuge() {
     }
 
-    public Fahrzeuge(String marke, String modell, double preis, Motorleistung motorleistung, Felgen felgen, Lackierung lackierung, Set<Sonderausstattungen> sonderausstattungen, Set<FileData> images) {
+    public Fahrzeuge(String marke, String modell, double preis, Motorleistung motorleistung, Felgen felgen, Lackierung lackierung, Set<Sonderausstattungen> sonderausstattungen) {
         this.marke = marke;
         this.modell = modell;
         this.preis = preis;
@@ -96,7 +93,7 @@ public class Fahrzeuge {
         this.felgen = felgen;
         this.lackierung = lackierung;
         this.sonderausstattungen = sonderausstattungen;
-        this.images = images;
+
     }
 
     public Long getId() {
@@ -187,8 +184,5 @@ public class Fahrzeuge {
         }
     }
 
-    public Set<FileData> getImages() {
-        return images;
-    }
 
 }

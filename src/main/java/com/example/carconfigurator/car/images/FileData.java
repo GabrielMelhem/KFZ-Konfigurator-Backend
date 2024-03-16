@@ -1,7 +1,6 @@
 package com.example.carconfigurator.car.images;
 
 
-import com.example.carconfigurator.car.fahrzeuge.Fahrzeuge;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,10 +9,6 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "FILE_DATA")
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
 public class FileData {
 
     @Id
@@ -24,7 +19,48 @@ public class FileData {
     private String type;
     private String filePath;
 
-    @ManyToOne
+    /*@ManyToOne
     @JoinColumn(name = "fahrzeug_id", nullable = true) // nullable = true if an image doesn't necessarily have to be linked to a Fahrzeuge
-    private Fahrzeuge fahrzeuge;
+    private Fahrzeuge fahrzeuge;*/
+
+    public FileData() {
+    }
+
+    public FileData(String name, String type, String filePath) {
+        this.name = name;
+        this.type = type;
+        this.filePath = filePath;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getFilePath() {
+        return filePath;
+    }
+
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
+    }
 }

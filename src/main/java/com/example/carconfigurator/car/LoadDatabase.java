@@ -20,6 +20,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 
+
 @Configuration
 public class LoadDatabase {
     @Value("classpath:${data.motorleistung}")
@@ -76,7 +77,8 @@ public class LoadDatabase {
                 Felgen felgen = felgenRepository.findById(Long.valueOf(fahrzeugMap.get("felgen_id").toString())).orElseThrow();
                 Lackierung lackierung = lackierungRepository.findById(((Integer) fahrzeugMap.get("lackierung_id")).longValue()).orElseThrow();
 
-                List<Integer> sonderausstattungenIds = mapper.convertValue(fahrzeugMap.get("sonderausstattungen_ids"), new TypeReference<List<Integer>>() {});
+                List<Integer> sonderausstattungenIds = mapper.convertValue(fahrzeugMap.get("sonderausstattungen_ids"), new TypeReference<List<Integer>>() {
+                });
                 Set<Sonderausstattungen> sonderausstattungenSet = sonderausstattungenIds.stream()
                         .map(id -> sonderausstattungenRepository.findById(Long.valueOf(id)).orElseThrow())
                         .collect(Collectors.toSet());
@@ -90,6 +92,8 @@ public class LoadDatabase {
                 fahrzeug.setFelgen(felgen);
                 fahrzeug.setLackierung(lackierung);
                 fahrzeug.setSonderausstattungen(sonderausstattungenSet);
+
+
 
                 fahrzeugeRepository.save(fahrzeug);
             });
