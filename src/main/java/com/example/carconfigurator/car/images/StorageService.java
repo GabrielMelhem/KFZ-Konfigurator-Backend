@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -65,6 +66,11 @@ public class StorageService {
     public Path getFilePath(String fileName) {
         Path rootLocation = Paths.get("/Users/gabimelhem/Desktop/MyFiles");
         return rootLocation.resolve(fileName);
+    }
+
+
+    public List<String> findFilePathsEndingWithName(String suffix) {
+        return fileDataRepository.findFilePathByFileNameEndingWith(suffix);
     }
 
 

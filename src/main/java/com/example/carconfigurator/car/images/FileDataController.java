@@ -11,6 +11,8 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.List;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -69,6 +71,18 @@ public class FileDataController {
             return ResponseEntity.internalServerError().body("Failed to upload image: " + e.getMessage());
         }
     }
+
+
+
+    @GetMapping("/fileSystem/endwith/{suffix}")
+    public ResponseEntity<List<String>> getFilesPathsBySuffix(@PathVariable String suffix) {
+        List<String> filePaths = service.findFilePathsEndingWithName(suffix);
+        if(filePaths.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(filePaths);
+    }
 }
+
 /*curl -X POST -F "image=@/Users/gabimelhem/Documents/Projects/images/5GKlass.png" http://localhost:8080/api/v1/image/fileSystem
 xcj-jzxz-ndw*/
