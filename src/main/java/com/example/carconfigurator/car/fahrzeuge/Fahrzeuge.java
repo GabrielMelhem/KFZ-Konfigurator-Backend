@@ -1,7 +1,6 @@
 package com.example.carconfigurator.car.fahrzeuge;
 
 import com.example.carconfigurator.car.felgen.Felgen;
-import com.example.carconfigurator.car.images.FileData;
 import com.example.carconfigurator.car.lackierung.Lackierung;
 import com.example.carconfigurator.car.motorleistung.Motorleistung;
 import com.example.carconfigurator.car.sonderausstattungen.Sonderausstattungen;
