@@ -17,16 +17,32 @@ public class StorageService {
     @Autowired
     private FileDataRepository fileDataRepository;
 
-    private final Path rootLocation = Paths.get("/Users/gabimelhem/Desktop/MyFiles");
+    /*private final Path rootLocation = Paths.get("/Users/gabimelhem/Desktop/MyFiles");*/
 
-    public String uploadImageToFileSystem(MultipartFile file) throws IOException {
-        String filename = UUID.randomUUID().toString() + "_" + file.getOriginalFilename();
+    public String uploadImageToFileSystem(MultipartFile file, String originalFileName) throws IOException {
+        /*String filename = UUID.randomUUID().toString() + "_" + file.getOriginalFilename();
         Path savePath = this.rootLocation.resolve(filename);
 
         Files.createDirectories(this.rootLocation); // Ensure the directory exists
         Files.copy(file.getInputStream(), savePath); // Save the file
 
-        return savePath.toString();
+        return savePath.toString();*/
+
+        Path storageDirectory = Paths.get("/Users/gabimelhem/Desktop/MyFiles");
+        if (!Files.exists(storageDirectory)) {
+            Files.createDirectories(storageDirectory);
+        }
+
+        // Resolve the file path to save the file
+        Path destinationFilePath = storageDirectory.resolve(originalFileName);
+
+        // Save the file to the file system
+        file.transferTo(destinationFilePath);
+
+        // Return the path or some identifier of the stored file
+        return destinationFilePath.toString();
+
+
     }
 
     public byte[] downloadImageFromFileSystem(String fileName) throws IOException {

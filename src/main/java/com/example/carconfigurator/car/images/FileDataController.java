@@ -59,7 +59,8 @@ public class FileDataController {
     @PostMapping(value ="/fileSystem", consumes = "multipart/form-data")
     public ResponseEntity<?> uploadImageToFileSystem(@RequestParam("image") MultipartFile file) {
         try {
-            String uploadImagePath = service.uploadImageToFileSystem(file);
+            String originalFileName = file.getOriginalFilename();
+            String uploadImagePath = service.uploadImageToFileSystem(file, originalFileName);
             System.out.println("Uploading file: " + file.getOriginalFilename());
             System.out.println("File size: " + file.getSize());
             System.out.println("Content type: " + file.getContentType());
