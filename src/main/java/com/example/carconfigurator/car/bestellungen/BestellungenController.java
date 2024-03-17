@@ -1,8 +1,11 @@
 package com.example.carconfigurator.car.bestellungen;
 
+import com.example.carconfigurator.car.fahrzeuge.Fahrzeuge;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(path = "api/v1/bestellungen")
@@ -32,4 +35,7 @@ public class BestellungenController {
         Bestellungen finalizedBestellung = bestellungenService.finalizeBestellung(slug);
         return ResponseEntity.ok(finalizedBestellung);
     }
+
+    @GetMapping
+    public List<Bestellungen> getFahrzeuge(){return bestellungenService.getBestellungen();}
 }

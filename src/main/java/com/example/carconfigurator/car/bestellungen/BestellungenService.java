@@ -1,9 +1,11 @@
 package com.example.carconfigurator.car.bestellungen;
 
+import com.example.carconfigurator.car.fahrzeuge.Fahrzeuge;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -42,6 +44,8 @@ public class BestellungenService {
             throw new EntityNotFoundException("Bestellung not found with slug: " + slug);
         }
     }
+
+    public List<Bestellungen> getBestellungen() {return bestellungenRepository.findAll();}
 }
 
 
