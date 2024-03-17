@@ -88,10 +88,13 @@ public class Bestellungen {
     @Column(unique = true)
     private String urlSlug;
 
+    private boolean isFinalized;
+
+
     public Bestellungen() {
     }
 
-    public Bestellungen(Fahrzeuge fahrzeug, Motorleistung motorleistung, Felgen felgen, Lackierung lackierung, Set<Sonderausstattungen> sonderausstattungen, double gesamtpreis, String date, String urlSlug) {
+    public Bestellungen(Fahrzeuge fahrzeug, Motorleistung motorleistung, Felgen felgen, Lackierung lackierung, Set<Sonderausstattungen> sonderausstattungen, double gesamtpreis, String date, String urlSlug, boolean isFinalized) {
         this.fahrzeug = fahrzeug;
         this.motorleistung = motorleistung;
         this.felgen = felgen;
@@ -100,6 +103,7 @@ public class Bestellungen {
         this.gesamtpreis = gesamtpreis;
         this.date = date;
         this.urlSlug = urlSlug;
+        this.isFinalized = isFinalized;
     }
 
     public Long getId() {
@@ -205,5 +209,13 @@ public class Bestellungen {
             throw new IllegalArgumentException("URL darf nicht null sein");
         }
 
+    }
+
+    public boolean getIsFinalized() {
+        return isFinalized;
+    }
+
+    public void setIsFinalized(boolean finalized) {
+        isFinalized = finalized;
     }
 }

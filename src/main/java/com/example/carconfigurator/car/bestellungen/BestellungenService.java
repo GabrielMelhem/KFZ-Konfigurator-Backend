@@ -1,5 +1,6 @@
 package com.example.carconfigurator.car.bestellungen;
 
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +29,18 @@ public class BestellungenService {
     // Method to find a Bestellung by its slug
     public Optional<Bestellungen> findBySlug(String slug) {
         return bestellungenRepository.findByUrlSlug(slug);
+    }
+
+
+    public Bestellungen finalizeBestellung(String slug) {
+        Optional<Bestellungen> bestellungOpt = bestellungenRepository.findByUrlSlug( slug);
+        if (bestellungOpt.isPresent()) {
+            Bestellungen bestellung = bestellungOpt.get();
+            bestellung.setIsFinalized(true);
+            return bestellungenRepository.save(bestellung);
+        } else {
+            throw new EntityNotFoundException("Bestellung not found with slug: " + slug);
+        }
     }
 }
 

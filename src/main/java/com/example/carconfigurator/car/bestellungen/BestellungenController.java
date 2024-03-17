@@ -15,7 +15,7 @@ public class BestellungenController {
     }
 
     @PostMapping
-    public  ResponseEntity<Bestellungen> addBestellung(@RequestBody Bestellungen bestellung) {
+    public  ResponseEntity<Bestellungen> createOrUpdateBestellung(@RequestBody Bestellungen bestellung) {
         Bestellungen savedBestellung = bestellungenService.saveBestellung(bestellung);
         return ResponseEntity.ok(savedBestellung);
     }
@@ -25,5 +25,11 @@ public class BestellungenController {
         return bestellungenService.findBySlug(slug)
                         .map(ResponseEntity::ok)
                         .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @PutMapping("/{slug}/finalize")
+    public ResponseEntity<Bestellungen> finalizeBestellung(@PathVariable String slug) {
+        Bestellungen finalizedBestellung = bestellungenService.finalizeBestellung(slug);
+        return ResponseEntity.ok(finalizedBestellung);
     }
 }
