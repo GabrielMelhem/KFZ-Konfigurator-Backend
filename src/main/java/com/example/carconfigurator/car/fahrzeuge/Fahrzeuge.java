@@ -5,7 +5,6 @@ import com.example.carconfigurator.car.lackierung.Lackierung;
 import com.example.carconfigurator.car.motorleistung.Motorleistung;
 import com.example.carconfigurator.car.sonderausstattungen.Sonderausstattungen;
 import jakarta.persistence.*;
-import lombok.Setter;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -15,7 +14,7 @@ import java.util.Set;
 @Table(name="fahrzeuge")
 public class Fahrzeuge {
 
-    @Setter
+
     @Id
     @SequenceGenerator(
             name = "fahrzeuge_sequence",
@@ -97,6 +96,10 @@ public class Fahrzeuge {
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getMarke() {

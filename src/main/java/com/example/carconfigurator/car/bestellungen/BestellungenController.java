@@ -1,8 +1,11 @@
 package com.example.carconfigurator.car.bestellungen;
 
+import com.example.carconfigurator.car.fahrzeuge.Fahrzeuge;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(path = "api/v1/bestellungen")
@@ -15,7 +18,7 @@ public class BestellungenController {
     }
 
     @PostMapping
-    public  ResponseEntity<Bestellungen> addBestellung(@RequestBody Bestellungen bestellung) {
+    public  ResponseEntity<Bestellungen> createOrUpdateBestellung(@RequestBody Bestellungen bestellung) {
         Bestellungen savedBestellung = bestellungenService.saveBestellung(bestellung);
         return ResponseEntity.ok(savedBestellung);
     }
@@ -26,4 +29,13 @@ public class BestellungenController {
                         .map(ResponseEntity::ok)
                         .orElseGet(() -> ResponseEntity.notFound().build());
     }
+
+    @PutMapping("/{slug}/finalize")
+    public ResponseEntity<Bestellungen> finalizeBestellung(@PathVariable String slug) {
+        Bestellungen finalizedBestellung = bestellungenService.finalizeBestellung(slug);
+        return ResponseEntity.ok(finalizedBestellung);
+    }
+
+    @GetMapping
+    public List<Bestellungen> getFahrzeuge(){return bestellungenService.getBestellungen();}
 }
