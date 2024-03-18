@@ -1,5 +1,22 @@
 [
-  {"sonderausstattung_name":"Klimaanlage","preis": 3000},
-  {"sonderausstattung_name":"Soundsystem ","preis": 3000},
-  {"sonderausstattung_name":"Fahrsicherheitssysteme","preis": 4000}
+  {
+  "sonderausstattung_name": "Klimaanlage",
+  "preis": 1500
+  },
+  {
+  "sonderausstattung_name": "Soundsystem",
+  "preis": 2000
+  },
+  {
+  "sonderausstattung_name": "Fahrsicherheitssysteme",
+  "preis": 2500
+  },
+  {
+  "sonderausstattung_name": "Ledersitze",
+  "preis": 3000
+  },
+  {
+  "sonderausstattung_name": "Panoramadach",
+  "preis": 3500
+}
 ]

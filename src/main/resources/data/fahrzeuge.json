@@ -178,6 +178,33 @@
     "felgen_id": 4,
     "lackierung_id": 3,
     "sonderausstattungen_ids":[]
+  },
+  {
+    "marke": "BMW",
+    "modell": "1er",
+    "preis": 31000,
+    "motorleistung_id": 3,
+    "felgen_id": 3,
+    "lackierung_id": 3,
+    "sonderausstattungen_ids": []
+  },
+  {
+    "marke": "Volkswagen",
+    "modell": "Tiguan",
+    "preis": 35000,
+    "motorleistung_id": 4,
+    "felgen_id": 4,
+    "lackierung_id": 4,
+    "sonderausstattungen_ids": []
+  },
+  {
+    "marke": "Mercedes",
+    "modell": "C-Klasse",
+    "preis": 42000,
+    "motorleistung_id": 2,
+    "felgen_id": 2,
+    "lackierung_id": 1,
+    "sonderausstattungen_ids": []
   }
 ]
 

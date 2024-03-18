@@ -1,6 +1,18 @@
 [
-  {"felgen_typ":"S","preis": 3000},
-  {"felgen_typ":"M","preis": 4000},
-  {"felgen_typ":"L","preis": 5000},
-  {"felgen_typ":"Pro","preis": 7000}
+  {
+    "felgen_typ": "Standard 17",
+    "preis": 1000
+  },
+  {
+    "felgen_typ": "Sport 18",
+    "preis": 1500
+  },
+  {
+    "felgen_typ": "Premium 19",
+    "preis": 2500
+  },
+  {
+    "felgen_typ": "Luxus 20",
+    "preis": 3500
+  }
 ]
